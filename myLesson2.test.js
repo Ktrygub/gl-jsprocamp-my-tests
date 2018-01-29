@@ -28,19 +28,19 @@ describe('pow function', () => {
     expect(pow(2, 10)).toBe(1024);
     expect(pow(4, 1 / 2)).toBe(2);
     expect(pow(2, -2)).toBe(0.25);
-    expect(pow(2, '2')).toBe(4);
+    expect(() => pow(2, '2')).toThrow();
   });
 });
 
 describe('random function', () => {
   test('random works good', () => {
     const results = {
-      min: random(-0.8, 2.7),
-      max: random(-0.8, 2.7),
+      min: random(2.7, -0.8),
+      max: random(2.7, -0.8),
     };
     for (let i = 0; i < 1000; i += 1) {
-      results.min = Math.min(random(-0.8, 2.7), results.min);
-      results.max = Math.max(random(-0.8, 2.7), results.max);
+      results.min = Math.min(random(2.7, -0.8), results.min);
+      results.max = Math.max(random(2.7, -0.8), results.max);
     }
     expect(results.min).toBe(0);
     expect(results.max).toBe(2);
