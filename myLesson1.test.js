@@ -56,7 +56,7 @@ describe('Basic JavaScript', () => {
   describe('Numbers', () => {
     it('should be possible to increase only numbers', () => {
       expect(increase(-0.4)).toEqual(0.6);
-      expect(increase(NaN)).toEqual(NaN);
+      expect(increase(NaN)).toEqual(-1);
       expect(increase('5')).toEqual(-1);
       expect(increase(new Number(4))).toEqual(-1);
       expect(increase([])).toEqual(-1);
