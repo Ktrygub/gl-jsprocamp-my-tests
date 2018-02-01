@@ -117,7 +117,7 @@ describe('Basic JavaScript', () => {
 
     it('should be possible to sort array', () => {
       expect(order(['d', 'a', 't', 'm'])).toEqual(['t', 'm', 'd', 'a']);
-      expect(order([1, 2, 3])).toEqual([3, 2, 1]);
+      expect(order([2, 1, 11])).toEqual([11, 2, 1]);
       expect(order([0, 7, -Infinity, Infinity, NaN])).toEqual([Infinity, 7, 0, -Infinity, NaN]);
       expect(() => order()).toThrow();
       expect(() => order('[1, 2, 3]')).toThrow();
