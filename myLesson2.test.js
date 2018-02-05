@@ -9,6 +9,7 @@ describe('sum function', () => {
     expect(sum(1, 2)).toBe(3);
     expect(sum(0, 0)).toBe(0);
     expect(sum(0.1, 0.2)).toBe(0.3);
+    expect(sum()).toBe(0);
     expect(() => sum('1', 2)).toThrow();
   });
 });
@@ -47,5 +48,8 @@ describe('random function', () => {
     expect(() => random(NaN, 4)).toThrow();
     expect(() => random(0, Infinity)).toThrow();
     expect(() => random(-Number.MAX_VALUE / 2, Number.MAX_VALUE / 1.9)).toThrow();
+  });
+  test('interval without integers inside', () => {
+    expect(() => random(0.1, 0.5)).toThrow('There is no integer values inside interval');
   });
 });
