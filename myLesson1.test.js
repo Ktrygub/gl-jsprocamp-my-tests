@@ -119,6 +119,8 @@ describe('Basic JavaScript', () => {
       expect(order(['d', 'a', 't', 'm'])).toEqual(['t', 'm', 'd', 'a']);
       expect(order([2, 1, 11])).toEqual([11, 2, 1]);
       expect(order([0, 7, -Infinity, Infinity, NaN])).toEqual([Infinity, 7, 0, -Infinity, NaN]);
+      expect(order([100, 26, 12, 45, -74, 84, 254, 124, 1, 0, -5, 24]))
+        .toEqual([254, 124, 100, 84, 45, 26, 24, 12, 1, 0, -5, -74]);
       expect(() => order()).toThrow();
       expect(() => order('[1, 2, 3]')).toThrow();
     });
